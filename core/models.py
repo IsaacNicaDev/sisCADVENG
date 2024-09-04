@@ -68,3 +68,16 @@ class Professor(models.Model):
     def __str__(self):
         return "%s %s %s %s" % (self.first_name, self.second_name, self.last_name, self.second_lastname)
     
+
+#prueba
+class Goal(models.Model):
+    descripcion = models.CharField(max_length=100)
+    fechainicio = models.DateField(null=True, blank=True)
+    fechalimite = models.DateField(null=True, blank=True)
+    notas = models.CharField(max_length=100)
+    area = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add= True)
+    updated_at = models.DateTimeField(auto_now= True)
+
+    def __str__(self):
+        return "%s %s %s %s %s" % (self.descripcion, self.fechainicio, self.fechalimite, self.notas, self.area)
