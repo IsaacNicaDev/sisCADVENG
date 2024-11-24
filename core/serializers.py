@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from catalogs.serializers import GenderSerializer, MaritalStatusSerializer
+from catalogs.serializers import  MaritalStatusSerializer
 
 from .models import *
 
