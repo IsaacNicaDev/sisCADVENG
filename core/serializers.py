@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from catalogs.serializers import GenderSerializer, MaritalStatusSerializer
 
 from .models import *
 
@@ -30,6 +31,8 @@ class StudentSerializer(serializers.ModelSerializer):
         read_only_fields = ("created_at",)
 
 class ProfessorSerializer(serializers.ModelSerializer):
+    marital_status_id = MaritalStatusSerializer()
+    
     class Meta:
         model = Professor
         fields = ("id", "first_name","second_name", "last_name", "second_lastname", "age","marital_status_id","phone",
