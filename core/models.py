@@ -66,7 +66,7 @@ class Professor(models.Model):
     updated_at = models.DateTimeField(auto_now= True)
 
     def __str__(self):
-        return "%s %s %s %s" % (self.first_name, self.second_name, self.last_name, self.second_lastname,
+        return "%s %s %s %s %s %s %s %s" % (self.first_name, self.second_name, self.last_name, self.second_lastname,
         self.age, self.marital_status_id, self.phone, self.number_children)
     
 
