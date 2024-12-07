@@ -31,7 +31,7 @@ class StudentSerializer(serializers.ModelSerializer):
         read_only_fields = ("created_at",)
 
 class ProfessorSerializer(serializers.ModelSerializer):
-    marital_status_id = MaritalStatusSerializer()
+    marital_status_id = serializers.PrimaryKeyRelatedField(queryset=MaritalStatus.objects.all())
     
     class Meta:
         model = Professor
