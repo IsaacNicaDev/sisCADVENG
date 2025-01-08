@@ -24,9 +24,3 @@ class ProfessorViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     serializer_class = ProfessorSerializer
 
-
-#prueba
-class GoalViewSet(viewsets.ModelViewSet):
-    queryset = Goal.objects.all()
-    permission_classes = [permissions.AllowAny]
-    serializer_class = GoalSerializer

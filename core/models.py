@@ -55,29 +55,20 @@ class Student(models.Model):
 
 class Professor(models.Model):
     first_name = models.CharField(max_length=15)
-    second_name = models.CharField(max_length=15)
+    second_name = models.CharField(max_length=15, blank=True, null=True)  # Opcional
     last_name = models.CharField(max_length=15)
-    second_lastname = models.CharField(max_length=15)
+    second_lastname = models.CharField(max_length=15, blank=True, null=True)  # Opcional
     age = models.IntegerField()
     marital_status_id = models.ForeignKey(MaritalStatus, on_delete=models.CASCADE)
     phone = models.CharField(max_length=15, unique=True)
     number_children = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add= True)
-    updated_at = models.DateTimeField(auto_now= True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "%s %s %s %s" % (self.first_name, self.second_name, self.last_name, self.second_lastname)
-    
-
-#prueba
-class Goal(models.Model):
-    descripcion = models.CharField(max_length=100)
-    fechainicio = models.DateField(null=True, blank=True)
-    fechalimite = models.DateField(null=True, blank=True)
-    notas = models.CharField(max_length=100)
-    area = models.CharField(max_length=100)
-    created_at = models.DateTimeField(auto_now_add= True)
-    updated_at = models.DateTimeField(auto_now= True)
-
-    def __str__(self):
-        return "%s %s %s %s %s" % (self.descripcion, self.fechainicio, self.fechalimite, self.notas, self.area)
+        return "%s %s %s %s" % (
+            self.first_name, 
+            self.second_name or '', 
+            self.last_name, 
+            self.second_lastname or ''
+        )

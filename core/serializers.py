@@ -38,10 +38,3 @@ class ProfessorSerializer(serializers.ModelSerializer):
         fields = ("id", "first_name","second_name", "last_name", "second_lastname", "age","marital_status_id","phone",
                 "number_children","created_at", "updated_at")
         read_only_fields = ("created_at",)
-
-#prueba
-class GoalSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Goal
-        fields = ("id", "descripcion", "fechainicio", "fechalimite", "notas", "area", "created_at", "updated_at")
-        read_only_fields = ("created_at",)
